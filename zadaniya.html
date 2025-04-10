@@ -10,6 +10,17 @@ if(!theme){theme=localStorage.getItem('theme');}
 if(!theme&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){theme='dark';}
 if(!theme){theme='light';}
 localStorage.setItem('theme-'+themeVersion,theme);sessionStorage.setItem('theme-'+themeVersion,theme);document.documentElement.setAttribute('data-theme',theme);document.cookie="theme="+theme+"; path=/; max-age=31536000";}catch(e){console.error('Ошибка при инициализации темы:',e);}</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-536NR23L"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-536NR23L');</script>
+<!-- End Google Tag Manager -->
 </head>
 <body class=loading>
 <div class=container>
