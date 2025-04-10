@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InforMate - Главная</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Применяем тему до загрузки страницы, чтобы избежать мигания
+        try {
+            // Устанавливаем версию для предотвращения проблем с кэшированием
+            const themeVersion = '1.0';
+            
+            // Используем комбинацию sessionStorage и localStorage для надежности
+            let theme = sessionStorage.getItem('theme-' + themeVersion);
+            
+            if (!theme) {
+                theme = localStorage.getItem('theme-' + themeVersion);
+            }
+            
+            if (!theme) {
+                theme = localStorage.getItem('theme'); // Поддержка старого формата
+            }
+            
+            if (!theme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                theme = 'dark';
+            }
+            
+            if (!theme) {
+                theme = 'light';
+            }
+
+            // Сохраняем в обоих хранилищах
+            localStorage.setItem('theme-' + themeVersion, theme);
+            sessionStorage.setItem('theme-' + themeVersion, theme);
+            
+            // Применяем тему
+            document.documentElement.setAttribute('data-theme', theme);
+            
+            // Создаем и устанавливаем cookie (на случай проблем с localStorage)
+            document.cookie = "theme=" + theme + "; path=/; max-age=31536000"; // 1 год
+        } catch (e) {
+            console.error('Ошибка при инициализации темы:', e);
+        }
+    </script>
+</head>
+<body class="loading">
+    <!-- Шапка -->
+    <div class="header">
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo">
+            <div class="logo-text">
+                <span class="logo-infor">INFOR</span>
+                <span class="logo-mate">MATE</span>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html" class="nav-link active">Главная</a>
+            <a href="teoriya.html" class="nav-link">Теория</a>
+            <a href="zadaniya.html" class="nav-link">Задания</a>
+        </nav>
+        <div class="buttons">
+            <button id="theme-toggle">☀️</button>
+	    <button class="menu-toggle">☰</button>
+        </div>
+    </div>
+
+    <!-- Основное содержимое -->
+    <main class="content">
+        <div class="card">
+            <h1>О сайте</h1>
+            <p>Добро пожаловать на сайт, посвящённый подготовке к заданиям 19, 20 и 21 из ЕГЭ по информатике! Здесь вы найдёте всё необходимое для понимания теории, изучения практических подходов и проверки знаний на реальных заданиях.</p>
+        </div>
+
+        <div class="card">
+            <h2>5 советов по подготовке:</h2>
+            <p id="random-tip">Загрузка...</p>
+        </div>
+
+        <div class="card">
+            <h2>Навигация по сайту</h2>
+            <p>На сайте представлены три основных раздела:</p>
+            <ul>
+                <li><strong>О сайте</strong>: Текущая страница, которая поможет вам понять, как устроен сайт и что вы здесь найдете.</li>
+                <li><strong>Теория</strong>: В разделе «Теория» собраны материалы, которые помогут вам в решении заданий. Там вы найдете подробное объяснение теоретической части и готовые шаблоны решений для двух типов задач. Также представлены шаблоны, которые помогут вам быстрее освоить основные подходы к решению.</li>
+                <li><strong>Задания</strong>: В этом разделе представлены разборы заданий с сайта ФИПИ. Наглядно показано как применять способ решения экзаменационных задач из раздела "Теория".</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Для кого этот сайт?</h2>
+            <p>Сайт создан для школьников, готовящихся к ЕГЭ, и учителей, которые хотят наглядно объяснить методы решения сложных задач. Независимо от вашего уровня подготовки, здесь вы найдете полезные материалы, которые помогут вам в решении заданий.</p>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <p>Свяжитесь с нами: <a href="#" class="email-link" data-email="inf0rmate@hotmail.com">inf0rmate@hotmail.com</a> | © InforMate, 2025</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.remove('loading');
+            document.body.classList.add('loaded');
+        });
+    </script>
+<script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        document.querySelector('.header nav').classList.toggle('active');
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #333;
+    --header-bg: #9159c8;
+    --card-bg: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --footer-bg: #9159c8;
+    --hover-bg: rgba(255, 255, 255, 0.1);
+    --active-bg: rgba(255, 255, 255, 0.2);
+    --mobile-menu-bg: rgba(0, 0, 0, 0.9);
+}
+
+[data-theme="dark"] {
+    --bg-color: #1e1e1e;
+    --text-color: #ffffff;
+    --header-bg: #7a4ba3;
+    --card-bg: #2b2b2b;
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --footer-bg: #7a4ba3;
+    --hover-bg: rgba(255, 255, 255, 0.05);
+    --active-bg: rgba(255, 255, 255, 0.1);
+    --mobile-menu-bg: rgba(0, 0, 0, 0.95);
+}
+
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.5s, color 0.5s;
+    line-height: 1.5;
+}
+
+/* Отключение анимации при загрузке страницы */
+body.loading {
+    transition: none !important;
+}
+
+/* Включение анимации после загрузки */
+body.loaded {
+    transition: background-color 0.5s, color 0.5s;
+}
+
+/* Шапка (адаптивная) */
+.header {
+    background-color: var(--header-bg);
+    color: white;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px var(--card-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.5s;
+    position: relative;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 100;
+}
+
+.header .logo img {
+    height: 40px;
+    width: auto;
+    max-width: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+.header .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.header .logo-infor,
+.header .logo-mate {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+/* Навигация (адаптивная) */
+.header nav {
+    display: flex;
+    gap: 15px;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.header nav a:hover {
+    background-color: var(--hover-bg);
+}
+
+.header nav a.active {
+    background-color: var(--active-bg);
+}
+
+/* Кнопки (иконки) */
+.header .buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    z-index: 100;
+}
+
+.header .buttons button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    padding: 5px;
+}
+
+.header .buttons button:hover {
+    transform: scale(1.1);
+}
+
+/* Мобильное меню */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Карточки (адаптивные) */
+.card {
+    background-color: var(--card-bg);
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px var(--card-shadow);
+    max-width: 800px;
+    width: 90%;
+    transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;
+}
+
+/* Изображения внутри карточек (адаптивные) */
+.card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/* Футер */
+.footer {
+    background-color: var(--footer-bg);
+    color: white;
+    padding: 15px 0;
+    margin-top: 40px;
+    text-align: center;
+    transition: background-color 0.5s;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.footer a:hover {
+    opacity: 0.8;
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+    /* Адаптация шапки */
+    .header {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+    }
+
+    .header .logo img {
+        height: 35px;
+    }
+
+    .header .logo-infor,
+    .header .logo-mate {
+        font-size: 20px;
+    }
+
+    /* Адаптация навигации */
+    .header nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--mobile-menu-bg);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        z-index: 99;
+    }
+
+    .header nav.active {
+        display: flex;
+    }
+
+    .header nav a {
+        font-size: 20px;
+        padding: 15px 20px;
+        margin: 5px 0;
+    }
+
+    /* Кнопка меню */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Уменьшаем отступы в карточках */
+    .card {
+        padding: 15px;
+        margin: 15px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Еще более компактный вид для маленьких экранов */
+    .header .logo {
+        gap: 5px;
+    }
+
+    .header .logo-infor,
+    .header .logo-mate {
+        font-size: 18px;
+    }
+
+    .header .buttons button {
+        font-size: 20px;
+    }
+
+    .card {
+        width: 95%;
+        padding: 10px;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px; /* Расстояние между иконками */
+    align-items: center;
+}
