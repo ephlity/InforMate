@@ -272,3 +272,13 @@ body.loaded {
     gap: 10px; /* Расстояние между иконками */
     align-items: center;
 }
+
+.theme-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.header .buttons button:hover .theme-icon {
+    transform: scale(1.1);
+}

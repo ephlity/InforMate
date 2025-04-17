@@ -9,9 +9,10 @@ function getCookie(name) {
     return null;
 }
 
-// Функция для применения темы
 function applyTheme(theme) {
     console.log('Применяется тема:', theme);
+    
+    document.documentElement.setAttribute('data-theme', theme);
     
     // Устанавливаем атрибут для CSS переменных
     document.documentElement.setAttribute('data-theme', theme);
@@ -40,11 +41,16 @@ function applyTheme(theme) {
     // Обновляем иконку переключателя
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
-        themeToggle.textContent = theme === 'dark' ? '🌙' : '☀️';
+        const icon = themeToggle.querySelector('.theme-icon');
+        if (icon) {
+            // Теперь для light темы - moon.png, для dark - sun.png
+            icon.src = theme === 'dark' ? 'img/light.png' : 'img/dark.png';
+            icon.alt = theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
+        }
     }
 
     // Обновляем изображения
-    const images = document.querySelectorAll('img');
+    const images = document.querySelectorAll('img:not(.theme-icon)');
     images.forEach(img => {
         const src = img.getAttribute('src');
         if (src) {
