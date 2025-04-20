@@ -76,7 +76,7 @@ localStorage.setItem('theme-'+themeVersion,theme);sessionStorage.setItem('theme-
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Определяем диапазон значений S</strong><br>
 Выясняем минимальное значение S для победы Вани:
@@ -102,7 +102,24 @@ localStorage.setItem('theme-'+themeVersion,theme);sessionStorage.setItem('theme-
 </p>
 <p>
 <strong>Ответ: 34</strong>
+</div>
 </p>
+</div>
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №19 (ФИПИ 98624A)
+
+def f(s, m):
+    if s >= 69: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('19)', [s for s in range(1,69) if not f(s,1) and f(s,2)])
+# Вывод: 19) [34]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
 </div>
 <div class=card>
 <h2>#02 (ФИПИ 95961D)</h2>
@@ -131,7 +148,7 @@ localStorage.setItem('theme-'+themeVersion,theme);sessionStorage.setItem('theme-
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Анализ предыдущего решения</strong><br>
 Продолжаем наше предыдущее решение, где мы нашли, что при S = 34 Ваня всегда может выиграть.
@@ -160,6 +177,22 @@ localStorage.setItem('theme-'+themeVersion,theme);sessionStorage.setItem('theme-
 <strong>Ответ: 17 33</strong>
 </p>
 </div>
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №20 (ФИПИ 95961D)
+
+def f(s, m):
+    if s >= 69: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('20)', [s for s in range(1,69) if not f(s,1) and f(s,3)])
+# Вывод: 20) [17, 33]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#03 (ФИПИ 95961D)</h2>
 <h3>Задание 21</h3>
@@ -187,7 +220,7 @@ localStorage.setItem('theme-'+themeVersion,theme);sessionStorage.setItem('theme-
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Анализ предыдущих решений</strong><br>
 Пытаемся получить позиции 17 и 33, которые мы нашли в предыдущем задании, чтобы продолжить игру.
@@ -216,6 +249,22 @@ localStorage.setItem('theme-'+themeVersion,theme);sessionStorage.setItem('theme-
 <strong>Ответ: 32</strong>
 </p>
 </div>
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №21 (ФИПИ 95961D)
+
+def f(s, m):
+    if s >= 69: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('21)', [s for s in range(1,69) if not f(s,2) and f(s,4)])
+# Вывод: 21) [32]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#04 (ФИПИ BDBF1A)</h2>
 <h3>Задание 19</h3>
@@ -236,7 +285,7 @@ localStorage.setItem('theme-'+themeVersion,theme);sessionStorage.setItem('theme-
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Определяем диапазон значений S</strong><br>
 Обозначим ходы:
@@ -282,6 +331,22 @@ S = 24 не подходит, так как Ваня не может гаран�
 <strong>Ответ: 25</strong>
 </p>
 </div>
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №19 (ФИПИ BDBF1A)
+
+def f(s, m):
+    if s >= 51: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s+4, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('19)', [s for s in range(1,51) if not f(s,1) and f(s,2)])
+# Вывод: 19) [25]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#05 (ФИПИ AA777A)</h2>
 <h3>Задание 20</h3>
@@ -297,7 +362,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Анализ предыдущего решения</strong><br>
 Из предыдущего задания мы знаем, что при S = 25 Ваня может выиграть своим первым ходом.
@@ -335,7 +400,22 @@ S = 24 не подходит, так как Ваня не может гаран�
 <strong>Ответ: 21 24</strong>
 </p>
 </div>
-<div class=card>
+<div class="card">
+    <h3>Решение на Python</h3>
+        <div class="code-container">
+            <pre><code class="python">def f(s, m):
+    if s >= 51: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s+4, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('20)', [s for s in range(1,51) if not f(s,1) and f(s,3)])
+# Вывод: 20) [21, 24]</code></pre>
+            <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+        </div>
+    </div>
+</div>
+<div class="card">
 <h2>#06 (ФИПИ 1ADFED)</h2>
 <h3>Задание 21</h3>
 <p>
@@ -350,7 +430,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Анализ предыдущих решений</strong><br>
 Из предыдущего задания мы знаем, что:
@@ -380,6 +460,22 @@ S = 24 не подходит, так как Ваня не может гаран�
 <strong>Ответ: 20</strong>
 </p>
 </div>
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №21 (ФИПИ 1ADFED)
+
+def f(s, m):
+    if s >= 51: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s+4, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('21)', [s for s in range(1,51) if not f(s,2) and f(s,4)])
+# Вывод: 21) [20]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#07 (ФИПИ 3D5235)</h2>
 <h3>Задание 19</h3>
@@ -397,7 +493,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Определяем диапазон значений S</strong><br>
 Обозначим ходы:
@@ -428,6 +524,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <strong>Ответ: 18</strong>
 </p>
 </div>
+<!-- Задача 7 (ФИПИ 3D5235) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №19 (ФИПИ 3D5235)
+
+def f(s, m):
+    if s >= 38: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('19)', [s for s in range(1,38) if not f(s,1) and f(s,2)])
+# Вывод: 19) [18]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#08 (ФИПИ 4E625B)</h2>
 <h3>Задание 20</h3>
@@ -443,7 +556,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Анализ предыдущего решения</strong><br>
 Из предыдущего задания мы знаем, что при S = 18 Ваня может выиграть своим первым ходом.
@@ -460,6 +573,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <strong>Ответ: 9 17</strong>
 </p>
 </div>
+<!-- Задача 8 (ФИПИ 4E625B) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №20 (ФИПИ 4E625B)
+
+def f(s, m):
+    if s >= 38: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('20)', [s for s in range(1,38) if not f(s,1) and f(s,3)])
+# Вывод: 20) [9, 17]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#09 (ФИПИ DD29FA)</h2>
 <h3>Задание 21</h3>
@@ -475,7 +605,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Анализ предыдущих решений</strong><br>
 Из предыдущего задания мы знаем, что:
@@ -495,6 +625,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <p>
 <strong>Ответ: 16</strong>
 </p>
+</div>
+<!-- Задача 9 (ФИПИ DD29FA) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №21 (ФИПИ DD29FA)
+
+def f(s, m):
+    if s >= 38: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('21)', [s for s in range(1,38) if not f(s,2) and f(s,4)])
+# Вывод: 21) [16]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
 </div>
 <div class=card>
 <h2>#10 (ФИПИ 5AB150)</h2>
@@ -519,7 +666,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Определяем диапазон значений S</strong><br>
 Обозначим ходы:
@@ -553,6 +700,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <strong>Ответ: 17</strong>
 </p>
 </div>
+<!-- Задача 10 (ФИПИ 5AB150) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №19 (ФИПИ 5AB150)
+
+def f(s, m):
+    if s >= 36: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s+4, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('19)', [s for s in range(1,36) if not f(s,1) and f(s,2)])
+# Вывод: 19) [17]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#11 (ФИПИ 08622F)</h2>
 <h3>Задание 20</h3>
@@ -568,7 +732,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Анализ предыдущего решения</strong><br>
 Из предыдущего задания мы знаем, что при S = 17 Ваня может выиграть своим первым ходом.
@@ -585,6 +749,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <strong>Ответ: 13 16</strong>
 </p>
 </div>
+<!-- Задача 11 (ФИПИ 08622F) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №20 (ФИПИ 08622F)
+
+def f(s, m):
+    if s >= 36: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s+4, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('20)', [s for s in range(1,36) if not f(s,1) and f(s,3)])
+# Вывод: 20) [13, 16]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#12 (ФИПИ F738F0)</h2>
 <h3>Задание 21</h3>
@@ -600,7 +781,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Анализ предыдущих решений</strong><br>
 Из предыдущего задания мы знаем, что:
@@ -622,6 +803,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <strong>Ответ: 12</strong>
 </p>
 </div>
+<!-- Задача 12 (ФИПИ F738F0) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №21 (ФИПИ F738F0)
+
+def f(s, m):
+    if s >= 36: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s+4, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('21)', [s for s in range(1,36) if not f(s,2) and f(s,4)])
+# Вывод: 21) [12]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#13 (ФИПИ FB8AAF)</h2>
 <h3>Задание 19</h3>
@@ -642,7 +840,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Определяем диапазон значений S</strong><br>
 Обозначим ходы:
@@ -673,6 +871,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <strong>Ответ: 14</strong>
 </p>
 </div>
+<!-- Задача 13 (ФИПИ FB8AAF) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №19 (ФИПИ FB8AAF)
+
+def f(s, m):
+    if s >= 29: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('19)', [s for s in range(1,29) if not f(s,1) and f(s,2)])
+# Вывод: 19) [14]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#14 (ФИПИ B4B268)</h2>
 <h3>Задание 20</h3>
@@ -688,7 +903,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Анализ предыдущего решения</strong><br>
 Из предыдущего задания мы знаем, что при S = 14 Ваня может выиграть своим первым ходом.
@@ -705,6 +920,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <strong>Ответ: 7 13</strong>
 </p>
 </div>
+<!-- Задача 14 (ФИПИ B4B268) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №20 (ФИПИ B4B268)
+
+def f(s, m):
+    if s >= 29: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('20)', [s for s in range(1,29) if not f(s,1) and f(s,3)])
+# Вывод: 20) [7, 13]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#15 (ФИПИ 5030FF)</h2>
 <h3>Задание 21</h3>
@@ -720,7 +952,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Анализ предыдущих решений</strong><br>
 Из предыдущего задания мы знаем, что:
@@ -738,6 +970,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <p>
 <strong>Ответ: 12</strong>
 </p>
+</div>
+<!-- Задача 15 (ФИПИ 5030FF) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №21 (ФИПИ 5030FF)
+
+def f(s, m):
+    if s >= 29: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('21)', [s for s in range(1,29) if not f(s,2) and f(s,4)])
+# Вывод: 21) [12]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
 </div>
 <div class=card>
 <h2>#16 (ФИПИ CCBB06)</h2>
@@ -762,7 +1011,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Определяем возможные ходы</strong><br>
 Обозначим ходы:
@@ -797,6 +1046,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <strong>Ответ: 19</strong>
 </p>
 </div>
+<!-- Задача 16 (ФИПИ CCBB06) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №19 (ФИПИ CCBB06)
+
+def f(s, m):
+    if s >= 58: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s+4, m-1), f(s*3, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('19)', [s for s in range(1,58) if not f(s,1) and f(s,2)])
+# Вывод: 19) [19]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#17 (ФИПИ 0E813C)</h2>
 <h3>Задание 20</h3>
@@ -812,7 +1078,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Анализ предыдущего решения</strong><br>
 Из предыдущего задания мы знаем, что при S = 19 Ваня может выиграть своим первым ходом.
@@ -829,6 +1095,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <strong>Ответ: 15 18</strong>
 </p>
 </div>
+<!-- Задача 17 (ФИПИ 0E813C) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №20 (ФИПИ 0E813C)
+
+def f(s, m):
+    if s >= 58: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s+4, m-1), f(s*3, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('20)', [s for s in range(1,58) if not f(s,1) and f(s,3)])
+# Вывод: 20) [15, 18]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#18 (ФИПИ FFFBB1)</h2>
 <h3>Задание 21</h3>
@@ -844,7 +1127,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Анализ предыдущих решений</strong><br>
 Из предыдущих заданий мы знаем, что выигрышные позиции для Пети - 15 и 18.
@@ -863,6 +1146,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <p>
 <strong>Ответ: 14</strong>
 </p>
+</div>
+<!-- Задача 18 (ФИПИ FFFBB1) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №21 (ФИПИ FFFBB1)
+
+def f(s, m):
+    if s >= 58: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s+4, m-1), f(s*3, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('21)', [s for s in range(1,58) if not f(s,2) and f(s,4)])
+# Вывод: 21) [14]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
 </div>
 <div class=card>
 <h2>#19 (ФИПИ 4B76F9)</h2>
@@ -887,7 +1187,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Определяем возможные ходы</strong><br>
 Обозначим ходы:
@@ -922,6 +1222,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <strong>Ответ: 28</strong>
 </p>
 </div>
+<!-- Задача 19 (ФИПИ 4B76F9) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №19 (ФИПИ 4B76F9)
+
+def f(s, m):
+    if s >= 85: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s+4, m-1), f(s*3, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('19)', [s for s in range(1,85) if not f(s,1) and f(s,2)])
+# Вывод: 19) [28]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#20 (ФИПИ F9D117)</h2>
 <h3>Задание 20</h3>
@@ -937,7 +1254,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Анализ предыдущего решения</strong><br>
 Из предыдущего задания мы знаем, что при S = 28 Ваня может выиграть своим первым ходом.
@@ -954,6 +1271,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <strong>Ответ: 24 27</strong>
 </p>
 </div>
+<!-- Задача 20 (ФИПИ F9D117) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №20 (ФИПИ F9D117)
+
+def f(s, m):
+    if s >= 85: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s+4, m-1), f(s*3, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('20)', [s for s in range(1,85) if not f(s,1) and f(s,3)])
+# Вывод: 20) [24, 27]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#21 (ФИПИ BEFAA7)</h2>
 <h3>Задание 21</h3>
@@ -969,7 +1303,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Анализ предыдущих решений</strong><br>
 Из предыдущих заданий мы знаем, что выигрышные позиции для Пети - 24 и 27.
@@ -988,6 +1322,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <p>
 <strong>Ответ: 23</strong>
 </p>
+</div>
+<!-- Задача 21 (ФИПИ BEFAA7) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №21 (ФИПИ BEFAA7)
+
+def f(s, m):
+    if s >= 85: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s+4, m-1), f(s*3, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('21)', [s for s in range(1,85) if not f(s,2) and f(s,4)])
+# Вывод: 21) [23]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
 </div>
 <div class=card>
 <h2>#22 (ФИПИ 930218)</h2>
@@ -1012,7 +1363,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Определяем возможные ходы</strong><br>
 Обозначим ходы:
@@ -1047,6 +1398,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <strong>Ответ: 18</strong>
 </p>
 </div>
+<!-- Задача 22 (ФИПИ 930218) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №19 (ФИПИ 930218)
+
+def f(s, m):
+    if s >= 55: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s+4, m-1), f(s*3, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('19)', [s for s in range(1,55) if not f(s,1) and f(s,2)])
+# Вывод: 19) [18]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#23 (ФИПИ 34D070)</h2>
 <h3>Задание 20</h3>
@@ -1062,7 +1430,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Анализ предыдущего решения</strong><br>
 Из предыдущего задания мы знаем, что при S = 18 Ваня может выиграть своим первым ходом.
@@ -1083,6 +1451,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <strong>Ответ: 6 14</strong>
 </p>
 </div>
+<!-- Задача 23 (ФИПИ 34D070) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №20 (ФИПИ 34D070)
+
+def f(s, m):
+    if s >= 55: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s+4, m-1), f(s*3, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('20)', [s for s in range(1,55) if not f(s,1) and f(s,3)])
+# Вывод: 20) [6, 14]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#24 (ФИПИ 378927)</h2>
 <h3>Задание 21</h3>
@@ -1098,7 +1483,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Анализ предыдущих решений</strong><br>
 Из предыдущих заданий мы знаем, что выигрышные позиции для Пети - 6 и 14.
@@ -1117,6 +1502,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <p>
 <strong>Ответ: 13</strong>
 </p>
+</div>
+<!-- Задача 24 (ФИПИ 378927) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №21 (ФИПИ 378927)
+
+def f(s, m):
+    if s >= 55: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s+4, m-1), f(s*3, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('21)', [s for s in range(1,55) if not f(s,2) and f(s,4)])
+# Вывод: 21) [13]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
 </div>
 <div class=card>
 <h2>#25 (ФИПИ 9555BE)</h2>
@@ -1138,7 +1540,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Определяем возможные ходы</strong><br>
 Обозначим ходы:
@@ -1170,6 +1572,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <strong>Ответ: 72</strong>
 </p>
 </div>
+<!-- Задача 25 (ФИПИ 9555BE) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №19 (ФИПИ 9555BE)
+
+def f(s, m):
+    if s >= 145: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('19)', [s for s in range(1,145) if not f(s,1) and f(s,2)])
+# Вывод: 19) [72]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#26 (ФИПИ 4ED215)</h2>
 <h3>Задание 20</h3>
@@ -1185,7 +1604,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Анализ предыдущего решения</strong><br>
 Из предыдущего задания мы знаем, что при S = 72 Ваня может выиграть своим первым ходом.
@@ -1202,6 +1621,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <strong>Ответ: 36 71</strong>
 </p>
 </div>
+<!-- Задача 26 (ФИПИ 4ED215) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №20 (ФИПИ 4ED215)
+
+def f(s, m):
+    if s >= 145: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('20)', [s for s in range(1,145) if not f(s,1) and f(s,3)])
+# Вывод: 20) [36, 71]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#27 (ФИПИ 183130)</h2>
 <h3>Задание 21</h3>
@@ -1214,7 +1650,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </ul>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Анализ предыдущих решений</strong><br>
 Из предыдущих заданий мы знаем, что выигрышные позиции для Пети - 36 и 71.
@@ -1224,15 +1660,32 @@ S = 24 не подходит, так как Ваня не может гаран�
 Пробуем получить 36 и 71:
 </p>
 <ul>
-<li>Число 36 можно получить из 35 (ходом A) и 18 (ходом B)</li>
-<li>Число 71 можно получить только из 70 (ходом A)</li>
+<li>Число 36 можно получить из 35 (ходом A) и 18 (ходом B), но игры будут очень долгие (победа на 3-ий или больше ход)</li>
+<li>Число 71 можно получить только из 70 (ходом A). Число пойдёт в ответ.</li>
 </ul>
 <p>
-Число 18 является минимальным подходящим значением.
+Число 70 является минимальным подходящим значением.
 </p>
 <p>
-<strong>Ответ: 18</strong>
+<strong>Ответ: 70</strong>
 </p>
+</div>
+<!-- Задача 27 (ФИПИ 183130) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №21 (ФИПИ 183130)
+
+def f(s, m):
+    if s >= 145: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('21)', [s for s in range(1,145) if not f(s,2) and f(s,4)])
+# Вывод: 21) [70]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
 </div>
 <div class=card>
 <h2>#28 (ФИПИ 10FE25)</h2>
@@ -1257,7 +1710,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Определяем возможные ходы</strong><br>
 Обозначим ходы:
@@ -1292,6 +1745,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <strong>Ответ: 17</strong>
 </p>
 </div>
+<!-- Задача 28 (ФИПИ 10FE25) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №19 (ФИПИ 10FE25)
+
+def f(s, m):
+    if s >= 35: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s+4, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('19)', [s for s in range(1,35) if not f(s,1) and f(s,2)])
+# Вывод: 19) [17]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#29 (ФИПИ 5E4903)</h2>
 <h3>Задание 20</h3>
@@ -1307,7 +1777,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Анализ предыдущего решения</strong><br>
 Из предыдущего задания мы знаем, что при S = 17 Ваня может выиграть своим первым ходом.
@@ -1324,6 +1794,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <strong>Ответ: 13 16</strong>
 </p>
 </div>
+<!-- Задача 29 (ФИПИ 5E4903) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №20 (ФИПИ 5E4903)
+
+def f(s, m):
+    if s >= 35: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s+4, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('20)', [s for s in range(1,35) if not f(s,1) and f(s,3)])
+# Вывод: 20) [13, 16]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
+</div>
 <div class=card>
 <h2>#30 (ФИПИ B60E41)</h2>
 <h3>Задание 21</h3>
@@ -1339,7 +1826,7 @@ S = 24 не подходит, так как Ваня не может гаран�
 </p>
 </div>
 <div class=card>
-<h3>Решение:</h3>
+<h3>Решение</h3>
 <p>
 <strong>Шаг 1. Анализ предыдущих решений</strong><br>
 Из предыдущих заданий мы знаем, что выигрышные позиции для Пети - 13 и 16.
@@ -1358,6 +1845,23 @@ S = 24 не подходит, так как Ваня не может гаран�
 <p>
 <strong>Ответ: 12</strong>
 </p>
+</div>
+<!-- Задача 30 (ФИПИ B60E41) -->
+<div class="card">
+    <h3>Решение на Python</h3>
+    <div class="code-container">
+        <pre><code class="python"># Решение задания №21 (ФИПИ B60E41)
+
+def f(s, m):
+    if s >= 35: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s+4, m-1), f(s*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('21)', [s for s in range(1,35) if not f(s,2) and f(s,4)])
+# Вывод: 21) [12]</code></pre>
+        <button class="copy-button" onclick="copyCode(this)">Копировать код</button>
+    </div>
 </div>
 </main>
 </div>
@@ -1440,6 +1944,395 @@ document.getElementById('backToTop').addEventListener('click', function(e) {
 <script>
     document.querySelector('.menu-toggle').addEventListener('click', function() {
         document.querySelector('.header nav').classList.toggle('active');
+    });
+</script>
+
+<script>
+    // Make solution sections collapsible
+    document.addEventListener('DOMContentLoaded', function() {
+        // Process all h3 headers that match our criteria
+        const headers = document.querySelectorAll('.card h3');
+        
+        headers.forEach(function(header) {
+            const text = header.textContent.trim();
+            if (text === 'Решение' || text === 'Решение на Python') {
+                makeCollapsible(header);
+            }
+        });
+        
+        // Function to make headers collapsible
+        function makeCollapsible(header) {
+            // Extract all content that follows the header within its parent
+            const card = header.closest('.card');
+            const contentElements = [];
+            let currentElement = header.nextElementSibling;
+            
+            // Add toggle indicator
+            header.classList.add('collapsible');
+            header.innerHTML = header.textContent + ' <span class="toggle-icon">▼</span>';
+            
+            // Add all following elements to the content to be toggled
+            while (currentElement) {
+                contentElements.push(currentElement);
+                currentElement = currentElement.nextElementSibling;
+            }
+            
+            // Wrap content in a container for smooth animation
+            const contentWrapper = document.createElement('div');
+            contentWrapper.className = 'collapsible-content';
+            
+            // Move all content into the wrapper
+            contentElements.forEach(element => {
+                contentWrapper.appendChild(element);
+            });
+            
+            // Insert the wrapper after the header
+            header.parentNode.insertBefore(contentWrapper, header.nextSibling);
+            
+            // Set up the click handler
+            header.addEventListener('click', function() {
+                this.classList.toggle('collapsed');
+                const content = this.nextElementSibling;
+                
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    // First set a very large height to ensure all content is measured
+                    content.style.maxHeight = "100000px"; 
+                    // Then measure the actual height and set it
+                    setTimeout(() => {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }, 0);
+                }
+            });
+            
+            // Start in collapsed state
+            header.classList.add('collapsed');
+        }
+    });
+</script>
+
+<style>
+    /* Styles for collapsible sections */
+    .collapsible {
+        cursor: pointer;
+        position: relative;
+        padding: 10px;
+        margin: -10px -10px 10px -10px;
+        background-color: rgba(145, 89, 200, 0.1);
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    
+    [data-theme="dark"] .collapsible {
+        background-color: rgba(145, 89, 200, 0.2);
+    }
+    
+    .collapsible:hover {
+        background-color: rgba(145, 89, 200, 0.2);
+    }
+    
+    [data-theme="dark"] .collapsible:hover {
+        background-color: rgba(145, 89, 200, 0.3);
+    }
+    
+    .toggle-icon {
+        position: absolute;
+        right: 15px;
+        transition: transform 0.3s ease;
+    }
+    
+    .collapsed .toggle-icon {
+        transform: rotate(-90deg);
+    }
+    
+    .collapsible-content {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease-out;
+    }
+    
+    /* Existing code container styles */
+    .code-container {
+        position: relative;
+        margin: 15px 0;
+    }
+
+    .code-container pre {
+        background-color: #f5f5f5;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto;
+        margin: 0;
+        border: 1px solid #ddd;
+    }
+
+    [data-theme="dark"] .code-container pre {
+        background-color: #2d2d2d;
+        border-color: #444;
+    }
+
+    .code-container code {
+        font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .copy-button {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background-color: #9159c8;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 5px 10px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .copy-button:hover {
+        background-color: #7a4ba3;
+    }
+
+    .copy-button.copied {
+        background-color: #4CAF50;
+    }
+</style>
+
+<!-- Add jQuery for the contains selector -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Функция копирования кода -->
+<script>
+function copyCode(button) {
+    const codeBlock = button.previousElementSibling;
+    const code = codeBlock.textContent;
+    
+    navigator.clipboard.writeText(code).then(() => {
+        // Изменяем текст кнопки
+        const originalText = button.textContent;
+        button.textContent = 'Скопировано!';
+        button.classList.add('copied');
+        
+        // Возвращаем исходный текст через 2 секунды
+        setTimeout(() => {
+            button.textContent = originalText;
+            button.classList.remove('copied');
+        }, 2000);
+    }).catch(err => {
+        console.error('Ошибка при копировании:', err);
+        alert('Не удалось скопировать код. Пожалуйста, попробуйте еще раз.');
+    });
+}
+</script>
+
+<!-- Answer input field styles -->
+<style>
+.answer-form {
+    background-color: rgba(145, 89, 200, 0.1);
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+[data-theme="dark"] .answer-form {
+    background-color: rgba(145, 89, 200, 0.2);
+}
+
+.answer-form .input-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.answer-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #7a4ba3;
+}
+
+[data-theme="dark"] .answer-label {
+    color: #b88ee2;
+}
+
+.answer-form input {
+    flex: 1;
+    min-width: 200px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+[data-theme="dark"] .answer-form input {
+    background-color: #333;
+    color: white;
+    border-color: #555;
+}
+
+.answer-form button {
+    background-color: #9159c8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.answer-form button:hover {
+    background-color: #7a4ba3;
+}
+
+.answer-feedback {
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    display: none;
+}
+
+.answer-feedback.correct {
+    display: block;
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #2e7d32;
+}
+
+[data-theme="dark"] .answer-feedback.correct {
+    background-color: rgba(76, 175, 80, 0.3);
+    color: #81c784;
+}
+
+.answer-feedback.incorrect {
+    display: block;
+    background-color: rgba(244, 67, 54, 0.2);
+    color: #c62828;
+}
+
+[data-theme="dark"] .answer-feedback.incorrect {
+    background-color: rgba(244, 67, 54, 0.3);
+    color: #e57373;
+}
+</style>
+
+<!-- Answer checking script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Store all answers in a map
+        const correctAnswers = {
+            1: "34",
+            2: "17 33",
+            3: "32",
+            4: "25",
+            5: "21 24",
+            6: "20",
+            7: "18",
+            8: "9 17",
+            9: "16",
+            10: "17",
+            11: "13 16",
+            12: "12",
+            13: "14",
+            14: "7 13",
+            15: "12",
+            16: "19",
+            17: "15 18",
+            18: "14",
+            19: "28",
+            20: "24 27",
+            21: "23",
+            22: "18",
+            23: "6 14",
+            24: "13",
+            25: "72",
+            26: "36 71",
+            27: "70",
+            28: "17",
+            29: "13 16",
+            30: "12"
+        };
+        
+        // Function to create answer input form
+        function createAnswerForm(taskNumber, taskCard) {
+            // Create the answer form
+            const answerForm = document.createElement('div');
+            answerForm.className = 'answer-form';
+            answerForm.innerHTML = `
+                <label for="answer-${taskNumber}" class="answer-label">Ваш ответ:</label>
+                <div class="input-group">
+                    <input type="text" id="answer-${taskNumber}" placeholder="Введите ваш ответ и нажмите Enter или кнопку Проверить">
+                    <button type="button" id="check-button-${taskNumber}">Проверить</button>
+                </div>
+                <div id="feedback-${taskNumber}" class="answer-feedback"></div>
+            `;
+            
+            // Insert the form at the end of the task card (before the solution card)
+            taskCard.appendChild(answerForm);
+            
+            // Add event listeners after the form is added to the DOM
+            setTimeout(() => {
+                const input = document.getElementById(`answer-${taskNumber}`);
+                const button = document.getElementById(`check-button-${taskNumber}`);
+                
+                if (input && button) {
+                    // Add click event to button
+                    button.addEventListener('click', () => checkAnswer(taskNumber));
+                    
+                    // Add enter key event to input
+                    input.addEventListener('keypress', (e) => {
+                        if (e.key === 'Enter') {
+                            e.preventDefault();
+                            checkAnswer(taskNumber);
+                        }
+                    });
+                }
+            }, 0);
+        }
+        
+        // Process all task cards
+        const taskCards = document.querySelectorAll('.card');
+        taskCards.forEach(function(card) {
+            const h3 = card.querySelector('h3');
+            if (h3 && h3.textContent.trim().startsWith('Задание')) {
+                // Extract task number from the card's h2 title
+                const h2 = card.querySelector('h2');
+                if (h2) {
+                    const taskMatch = h2.textContent.match(/#(\d+)/);
+                    if (taskMatch && taskMatch[1]) {
+                        const taskNumber = parseInt(taskMatch[1]);
+                        createAnswerForm(taskNumber, card);
+                    }
+                }
+            }
+        });
+        
+        // Make the checkAnswer function global
+        window.checkAnswer = function(taskNumber) {
+            const input = document.getElementById(`answer-${taskNumber}`);
+            const feedback = document.getElementById(`feedback-${taskNumber}`);
+            
+            if (!input || !feedback) return;
+            
+            const userAnswer = input.value.trim().toLowerCase();
+            const correctAnswer = correctAnswers[taskNumber].toLowerCase();
+            
+            // Check if the answer is correct (allowing for different spacing)
+            const isCorrect = userAnswer.replace(/\s+/g, ' ') === correctAnswer.replace(/\s+/g, ' ');
+            
+            feedback.classList.remove('correct', 'incorrect');
+            if (isCorrect) {
+                feedback.textContent = 'Верно!';
+                feedback.classList.add('correct');
+            } else {
+                feedback.textContent = 'Неверно. Попробуйте еще раз.';
+                feedback.classList.add('incorrect');
+            }
+        };
     });
 </script>
 </body>
